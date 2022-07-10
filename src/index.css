@@ -1,13 +1,126 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --primary-Cyan: #2acfcf;
+  --primary-Dark-Violet: #3b3054;
+  --secondary-Red: #f46262;
+  --Gray: #bfbfbf;
+  --Grayish-Violet: #9e9aa7;
+  --Very-Dark-Blue: #05020e;
+  --Very-Dark-Violet: #232127;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.attribution {
+  width: 100%;
+  color: white;
+  background-color: var(--Very-Dark-Violet);
+  margin-top: -38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1.5px;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: #2acfcf;
+  margin-left: 5px;
+}
+
+span.errorMsg {
+  position: absolute;
+  left: 6vw;
+  bottom: 10px;
+  color: var(--secondary-Red);
+  font-style: italic;
+  display: none;
+}
+
+
+article.urlCard {
+  background-color: white;
+  width: 72%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 26px;
+  padding: 16px 30px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.original-link {
+  color: var(--Very-Dark-Blue);
+}
+
+.short-link {
+  color: var(--primary-Cyan);
+  margin-right: 25px;
+}
+
+.urlCard-btn {
+  border: none;
+  outline: none;
+  background-color: var(--primary-Cyan);
+  color: white;
+  font-family: inherit;
+  font-size: 18px;
+  padding: 8px 35px;
+  border-radius: 8px;
+  width: 138px;
+}
+
+button:hover {
+  background-color: #9be3e2;
+}
+
+@media only screen and (max-width: 960px) {
+  article.urlCard {
+    width: 90%;
+    flex-direction: column;
+    align-items: initial;
+    overflow: hidden;
+    padding: 12px 15px;
+    font-size: 18px;
+  }
+
+  article.urlCard hr {
+    margin-left: -50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 150%;
+    height: 0.2px;
+    border: 0.2px solid var(--Gray);
+  }
+
+  .urlCard-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  span.errorMsg {
+    position: relative;
+    top: 5px;
+    left: -50px;
+  }
+  .attribution {
+    margin: auto;
+    text-align: center;
+  }
 }
