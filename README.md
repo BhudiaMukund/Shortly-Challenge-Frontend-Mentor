@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://github.com/BhudiaMukund/Shortly-Challenge-Frontend-Mentor](https://github.com/BhudiaMukund/Shortly-Challenge-Frontend-Mentorm)
 - Live Site URL: [https://shortlychallenge.netlify.app/](https://shortlychallenge.netlify.app/)
 
 ### Built with
