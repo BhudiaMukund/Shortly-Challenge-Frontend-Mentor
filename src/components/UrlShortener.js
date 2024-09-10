@@ -27,13 +27,13 @@ function UrlShortener() {
       if (existsArray.length === 0) {
         const fetchData = async () => {
           let response = await fetch(
-            `https://api.shrtco.de/v2/shorten?url=${urlInput}`
+            `/API/write/get?url=${urlInput}&type=json`
           );
           let urlData = await response.json();
           let url = await urlData;
           let data = {
-            original_link: url.result.original_link,
-            short_link: url.result.full_short_link,
+            original_link: url.data.full,
+            short_link: url.data.url,
           };
           setShortUrl((shortUrl) => [data, ...shortUrl]);
           setUrlInput("");
@@ -77,7 +77,7 @@ function UrlShortener() {
               setUrlInput(e.target.value);
               handleOnChange();
             }}
-            type="text"
+            type="url"
             placeholder="Shorten a link here..."
             id="inputField"
             error={error}
@@ -86,7 +86,7 @@ function UrlShortener() {
             Please add a link
           </span>
 
-          <button type="button" onClick={(event) => handleSubmit(event)}>
+          <button type="submit">
             Shorten It!
           </button>
         </form>
