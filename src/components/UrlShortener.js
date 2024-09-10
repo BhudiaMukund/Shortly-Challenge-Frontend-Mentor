@@ -27,7 +27,7 @@ function UrlShortener() {
       if (existsArray.length === 0) {
         const fetchData = async () => {
           let response = await fetch(
-            `/API/write/get?url=${urlInput}&type=json`
+            `https://ulvis.net/API/write/get?url=${urlInput}&type=json`
           );
           let urlData = await response.json();
           let url = await urlData;
