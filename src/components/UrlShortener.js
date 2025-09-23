@@ -26,14 +26,21 @@ function UrlShortener() {
 
       if (existsArray.length === 0) {
         const fetchData = async () => {
-          let response = await fetch(
-            `https://ulvis.net/API/write/get?url=${urlInput}&type=json`
-          );
+          let response = await fetch('https://spoo.me', {
+              method: 'POST',
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/x-www-form-urlencoded'
+              },
+              body: new URLSearchParams({
+                  'url': urlInput
+              })
+          });
           let urlData = await response.json();
           let url = await urlData;
           let data = {
-            original_link: url.data.full,
-            short_link: url.data.url,
+            original_link: url.original_url,
+            short_link: url.short_url,
           };
           setShortUrl((shortUrl) => [data, ...shortUrl]);
           setUrlInput("");
