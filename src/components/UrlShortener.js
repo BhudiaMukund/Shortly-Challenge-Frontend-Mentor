@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import Statistics from "./Statistics";
 
 function UrlShortener() {
   const [urlInput, setUrlInput] = useState("");
